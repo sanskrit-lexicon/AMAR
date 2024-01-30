@@ -31,7 +31,7 @@ def gender_freq(lines):
       syn,gen = syngen.split('-')
      else:
       syn = syngen
-      gen = 'unknown'
+      gen = 'ajYAta'
      # update d
      if gen not in d:
       d[gen] = 0
@@ -59,9 +59,10 @@ def get_gender_names():
  d['strIba'] = 'strI bahuvacana,feminine plural'
  d['strIdvi'] = 'strI dvivacana,feminine dual'
  d['strIklI'] = 'strI klIba vA,feminine or neuter'
- d['tri'] = '?'
+ d['tri'] = 'puMs strI kIba vA, musculine feminine or neuter'
  d['vA'] = '?'
  d['vApuMklI'] = '?'
+ d['ajYAta'] = 'ajYAta, unknown'
  return d
 
 def make_outarr_1(dgen):

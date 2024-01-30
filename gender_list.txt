@@ -1,0 +1,15 @@
+0381 a          avyayaH,indeclineable
+2084 ajYAta     ajYAta, unknown
+2072 klI        klIba,neuter
+0002 klIa       klIba avyayaH vA,neuter or indeclinable
+0002 klIdvi     klIba dvivacana,neuter dual
+5097 puM        puMs,masculine
+0011 puMba      puMs bahuvacana,masculine plural
+0022 puMdvi     puMs dvivacana,masculine dual
+0296 puMklI     puMs klIba vA,masculine or neuter
+0070 puMstrI    puMs strI vA,masculine or feminine
+2356 strI       strI,feminine
+0014 strIba     strI bahuvacana,feminine plural
+0002 strIdvi    strI dvivacana,feminine dual
+0013 strIklI    strI klIba vA,feminine or neuter
+1614 tri        puMs strI kIba vA, musculine feminine or neuter

@@ -556,7 +556,7 @@
 ;c{<s>aTa vyomavargaH .</s>}
 <L>53<pc>
 <info kvvv="<s>praTamaM kARqam</s>, <s>vyomavargaH</s>"/>
-<eid>163<syns><s>dyo-strI,div-strI,aBra-klI,vyoman-klI,puzkara-klI,ambara-klI,naBas-klI,antarikza-klI,gagana-klI,ananta-klI,suravartman-klI,Ka-klI,viyat-klI,vizRupada-klI,AkASa-puMklI,vihAyas-puMklI,vihAyasa-puM,nAka-puMda,dyus-a,tArApaTa-puM,antarikza-klI,meGADvan-klI,mahAbila-klI</s>
+<eid>163<syns><s>dyo-strI,div-strI,aBra-klI,vyoman-klI,puzkara-klI,ambara-klI,naBas-klI,antarikza-klI,gagana-klI,ananta-klI,suravartman-klI,Ka-klI,viyat-klI,vizRupada-klI,AkASa-puMklI,vihAyas-puMklI,vihAyasa-puM,nAka-puM,dyus-a,tArApaTa-puM,antarikza-klI,meGADvan-klI,mahAbila-klI</s>
 <eid>164<syns><s>vihAyas-puM,Sakuna-klI</s>
 <s>dyodivO dve striyAmaBraM vyoma puzkaramambaram .</s>
 <s>naBo'ntarikzaM gaganamanantaM suravartma Kam .</s>
