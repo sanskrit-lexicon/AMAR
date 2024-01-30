@@ -2159,11 +2159,11 @@
 <L>286<pc>
 <info kvvv="<s>praTamaM kARqam</s>, <s>narakavargaH</s>"/>
 <eid>701<syns><s>nAraka-puM,naraka-puM,niraya-puM,durgati-strI</s>
-<eid>702<syns><s>tapana-puMM</s>
-<eid>703<syns><s>avIci-puMM</s>
-<eid>704<syns><s>mahArOrava-puMM</s>
-<eid>705<syns><s>rOrava-puMM</s>
-<eid>706<syns><s>saNGAta-puMM</s>
+<eid>702<syns><s>tapana-puM</s>
+<eid>703<syns><s>avIci-puM</s>
+<eid>704<syns><s>mahArOrava-puM</s>
+<eid>705<syns><s>rOrava-puM</s>
+<eid>706<syns><s>saNGAta-puM</s>
 <eid>707<syns><s>kAlasUtra-klI</s>
 <eid>708<syns><s>nAraka-puM,preta-puM</s>
 <eid>709<syns><s>vEtaraRI-strI</s>
@@ -15812,4 +15812,3 @@
 <eid>5590<syns><s>apAYc-a,apAcI</s>
 <s>digdeSakAle pUrvAdO prAgudakpratyagAdayaH .. 23 ..</s>
 <LEND>
-

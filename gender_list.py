@@ -26,7 +26,12 @@ def gender_freq(lines):
     syngens_str = m.group(1)
     syngens = re.split(r' *, *',syngens_str)
     for syngen in syngens:
-     syn,gen = syngen.split('-')
+     print(syngen)
+     if '-' in syngen:
+      syn,gen = syngen.split('-')
+     else:
+      syn = syngen
+      gen = 'unknown'
      # update d
      if gen not in d:
       d[gen] = 0
@@ -36,10 +41,11 @@ def gender_freq(lines):
 
 def get_gender_names():
  d = {}
- d['a'] = 'avyayIBAva,indeclineable'
+ d['a'] = 'avyayaH,indeclineable'
  d['klI'] = 'klIba,neuter'
  d['klIba'] = 'klIba bahuvacana,neuter plural'
  d['klIdvi'] = 'klIba dvivacana,neuter dual'
+ d['klIa'] = 'klIba avyayaH vA,neuter or indeclinable'
  d['puM'] = 'puMs,masculine'
  d['puMba'] = 'puMs bahuvacana,masculine plural'
  d['puMdvi'] = 'puMs dvivacana,masculine dual'
