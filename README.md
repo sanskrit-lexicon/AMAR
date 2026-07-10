@@ -1,6 +1,8 @@
 # AMAR — Amarakośa in CDSL Format
 
-The **AMAR** repository converts the *Amarakośa* (*Nāmaliṅgānuśāsana*) of Amarasiṃha from its OCR Devanagari source into the Cologne Digital Sanskrit Lexicon (CDSL) plain-text format. The result, `amar.txt`, feeds directly into the CDSL build pipeline and the [csl-orig](https://github.com/sanskrit-lexicon/csl-orig) repository.
+_Created: 30-01-2024 · Last updated: 11-07-2026_
+
+The **AMAR** repository converts the *Amarakośa* (*Nāmaliṅgānuśāsana*) of Amarasiṃha from its OCR Devanagari source into the Cologne Digital Sanskrit Lexicon (CDSL) plain-text format. The result, [amar.txt](https://github.com/sanskrit-lexicon/AMAR/blob/main/amar.txt), feeds into the CDSL build pipeline and the [csl-orig](https://github.com/sanskrit-lexicon/csl-orig) repository.
 
 The *Amarakośa* is the most widely cited classical Sanskrit thesaurus, organised into three *kāṇḍa*s and dozens of thematic *varga*s. Each entry lists synonyms with grammatical-gender codes in SLP1 transliteration.
 
@@ -8,26 +10,31 @@ The *Amarakośa* is the most widely cited classical Sanskrit thesaurus, organise
 
 | File / Dir | Description |
 |---|---|
-| `amar1.txt` | OCR source in Devanagari (from drdhaval2785/sanskrit-lexica-ocr) |
-| `amar.txt` | Processed CDSL-format output (published version) |
-| `convert.py` | Devanagari ↔ SLP1 transcoder driver |
-| `addinfo.py` | Adds CDSL structural markup to the SLP1 intermediate |
-| `gender_list.py` | Generates gender-frequency list from `amar.txt` |
-| `gender_list.txt` | Gender frequency list output |
-| `transcoder.py` + `transcoder/` | SLP1 / Devanagari / IAST transcoding engine and tables |
-| `redo.sh` | Pipeline orchestrator |
-| `CITATION.cff` | CFF 1.2.0 academic citation metadata |
-| `LICENSE` | CC-BY-SA-4.0 |
+| [amar1.txt](https://github.com/sanskrit-lexicon/AMAR/blob/main/amar1.txt) | OCR source in Devanagari (from drdhaval2785/sanskrit-lexica-ocr) |
+| [amar.txt](https://github.com/sanskrit-lexicon/AMAR/blob/main/amar.txt) | Processed CDSL-format output (published version) |
+| [convert.py](https://github.com/sanskrit-lexicon/AMAR/blob/main/convert.py) | Devanagari ↔ SLP1 transcoder driver |
+| [addinfo.py](https://github.com/sanskrit-lexicon/AMAR/blob/main/addinfo.py) | Adds CDSL structural markup to the SLP1 intermediate |
+| [gender_list.py](https://github.com/sanskrit-lexicon/AMAR/blob/main/gender_list.py) | Generates gender-frequency list from `amar.txt` |
+| [gender_list.txt](https://github.com/sanskrit-lexicon/AMAR/blob/main/gender_list.txt) | Gender frequency list output |
+| [transcoder.py](https://github.com/sanskrit-lexicon/AMAR/blob/main/transcoder.py) + [transcoder/](https://github.com/sanskrit-lexicon/AMAR/tree/main/transcoder) | SLP1 / Devanagari / IAST transcoding engine and tables |
+| [redo.sh](https://github.com/sanskrit-lexicon/AMAR/blob/main/redo.sh) | Pipeline orchestrator |
+| [index.html](https://github.com/sanskrit-lexicon/AMAR/blob/main/index.html) | GitHub Pages landing page |
+| [changelog.md](https://github.com/sanskrit-lexicon/AMAR/blob/main/changelog.md) | Dated maintenance snapshots |
+| [CITATION.cff](https://github.com/sanskrit-lexicon/AMAR/blob/main/CITATION.cff) | CFF 1.2.0 academic citation metadata |
+| [LICENSE](https://github.com/sanskrit-lexicon/AMAR/blob/main/LICENSE) | CC-BY-SA-4.0 |
 
 ## Timeline
 
 | Period | Work |
 |---|---|
-| 30 Jan 2024 | Initial conversion: `amar1.txt` (Devanagari OCR) → `amar.txt` (CDSL format) |
-| 30 Jan 2024 | Gender frequency list generated |
-| May 2026 | CLAUDE.md added; CITATION.cff enriched with publication metadata |
+| 30 Jan 2024 | Initial conversion: `amar1.txt` (Devanagari OCR) → `amar.txt` (CDSL format); gender frequency list generated |
+| May 2026 | [CLAUDE.md](https://github.com/sanskrit-lexicon/AMAR/blob/main/CLAUDE.md) added; README and full issue triage (labels, milestones, projects); CITATION.cff enriched with publication metadata |
+| Jun 2026 | [changelog.md](https://github.com/sanskrit-lexicon/AMAR/blob/main/changelog.md) started |
+| Jul 2026 | GitHub Pages landing page ([index.html](https://github.com/sanskrit-lexicon/AMAR/blob/main/index.html)) added |
 
 ## Projects & Milestones
+
+Milestones follow the Cologne dictionary-repo convention (Dictionary to Book · Digitization Quality · Structured Data · Major Enhancements).
 
 | # | Milestone | Open | Closed |
 |---|---|---|---|
@@ -52,11 +59,13 @@ flowchart LR
   O --> W["csl-app web display"]
 ```
 
+Corrections to the published dictionary text are never made directly to the csl-orig source; they are expressed as change files applied by scripts, per the canonical [csl-orig correction workflow](https://github.com/sanskrit-lexicon/csl-corrections/blob/main/docs/correction-workflow.md).
+
 ## Encoding
 
 - UTF-8 NFC throughout.
 - Sanskrit text in SLP1 transliteration, wrapped in `<s>…</s>`.
-- Display layer uses IAST (ISO 15919) and Devanagari, generated via `transcoder/`.
+- Display layer uses IAST (ISO 15919) and Devanagari, generated via [transcoder/](https://github.com/sanskrit-lexicon/AMAR/tree/main/transcoder).
 - Round-trip verified: `amar1.txt` → SLP1 → Devanagari produces zero diff lines.
 
 ## Issue Typology
@@ -74,7 +83,7 @@ pie title Open issues by type
 
 ### Solved issues
 
-No closed issues yet.
+No closed dictionary issues yet.
 
 ## Labels
 
@@ -113,5 +122,7 @@ No closed issues yet.
 
 | GitHub | Contributions |
 |---|---|
+| [gasyoun](https://github.com/gasyoun) | 10 commits |
 | [drdhaval2785](https://github.com/drdhaval2785) | 5 commits |
-| [gasyoun](https://github.com/gasyoun) | 2 commits |
+
+_Dr. Mārcis Gasūns_
