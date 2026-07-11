@@ -10,6 +10,7 @@ The *Amarakośa* is the most widely cited classical Sanskrit thesaurus, organise
 
 | File / Dir | Description |
 |---|---|
+| [docs/CONVERSION_MANUAL.md](https://github.com/sanskrit-lexicon/AMAR/blob/main/docs/CONVERSION_MANUAL.md) | **Operator manual** — re-running, verifying, and extending the pipeline end-to-end (cheat-sheet, walkthrough, symptom→cure, maintainer appendix); metadoc at [docs/CONVERSION_MANUAL.meta.md](https://github.com/sanskrit-lexicon/AMAR/blob/main/docs/CONVERSION_MANUAL.meta.md) |
 | [amar1.txt](https://github.com/sanskrit-lexicon/AMAR/blob/main/amar1.txt) | OCR source in Devanagari (from drdhaval2785/sanskrit-lexica-ocr) |
 | [amar.txt](https://github.com/sanskrit-lexicon/AMAR/blob/main/amar.txt) | Processed CDSL-format output (published version) |
 | [convert.py](https://github.com/sanskrit-lexicon/AMAR/blob/main/convert.py) | Devanagari ↔ SLP1 transcoder driver |
