@@ -2,6 +2,7 @@
 
 _Created: 11-07-2026 · Last updated: 11-07-2026_
 
+
 Companion record for
 [docs/CONVERSION_MANUAL.md](https://github.com/sanskrit-lexicon/AMAR/blob/main/docs/CONVERSION_MANUAL.md)
 — purpose, provenance, improvement backlog, and revision history of the manual
@@ -59,6 +60,60 @@ and can interpret every console line the pipeline prints.
 - Verified on Windows (Git Bash) only, 11-07-2026; the CRLF section is
   inapplicable on LF-native systems.
 
+## Intended use / known misuse
+
+- **For:** an operator or maintainer who needs to re-run
+  [redo.sh](https://github.com/sanskrit-lexicon/AMAR/blob/main/redo.sh)
+  end-to-end, verify its console output against the checkpoint table, diagnose
+  a failure via the symptom table, or extend `addinfo.py` with a new `info_N`
+  pass — all without reading the four pipeline scripts first. It is also the
+  reference for a CDSL integrator confirming what `amar.txt`'s tags mean before
+  wiring stage 4 downstream.
+- **Known/likely misuse:**
+  - Treating stage 4's "first-time CDSL wiring checklist" as a verified,
+    re-executable runbook — it is a summary pointer to
+    [CLAUDE.md](https://github.com/sanskrit-lexicon/AMAR/blob/main/CLAUDE.md)
+    for a step that has not been re-run since AMAR's original onboarding (see
+    Known limitations above).
+  - Reading the manual as documentation of the *editorial content* of the
+    Amarakośa itself, or of `amar1.txt`'s 2024 one-time import steps — it
+    documents only the mechanical OCR→CDSL conversion pipeline that runs on
+    top of that already-imported source.
+  - Assuming the "Observed defects and latent traps" list describes bugs that
+    corrupt current output — invariant 3 in the appendix proves zero net loss
+    on present data; the list flags *latent* risk for future data shapes, not
+    an active defect.
+  - Skipping `--strip-trailing-cr` on a Windows/`core.autocrlf true` checkout
+    and concluding the round-trip or reproducibility checks failed — that is
+    the documented CRLF phantom-diff, not a real regression.
+  - Using this manual as a substitute for the
+    [csl-orig correction workflow](https://github.com/sanskrit-lexicon/csl-corrections/blob/main/docs/correction-workflow.md)
+    when a *published* text error needs fixing — this manual covers re-running
+    the conversion pipeline, not the change-file correction process for
+    already-published CDSL text.
+
+## Maintenance & sunset plan
+
+The manual is kept alive by whoever next touches the AMAR conversion pipeline
+(`redo.sh`, `convert.py`, `addinfo.py`, `gender_list.py`, or the
+`transcoder/` tables) in the `sanskrit-lexicon/AMAR` repo — there is no
+separate owning process or scheduled job; it updates opportunistically when a
+script changes or a documented number (line counts, change counts) drifts.
+The six items in the Ranked improvement backlog above are the concrete
+maintenance queue; item 1 (the `info_1` silent-line-drop fix) and item 2
+(`set -e` in `redo.sh`) are the ones most likely to force a manual update if
+picked up. "Archived/ended" for this document means one of: the AMAR pipeline
+itself is retired (the dictionary is fully migrated to a different conversion
+path and `redo.sh` no longer runs), or the manual is superseded by a newer
+document covering the same pipeline — in either case this metadoc's
+Deprecation status below should flip and the file should move under an
+`archive/` folder per the org's `/handoff-archive`-style convention. No sunset
+is currently scheduled or anticipated.
+
+## Deprecation status
+
+`active`
+
 ## Related documents
 
 - [README.md](https://github.com/sanskrit-lexicon/AMAR/blob/main/README.md) — repo overview, timeline, issue taxonomy
@@ -71,5 +126,6 @@ and can interpret every console line the pipeline prints.
 | Date | Change | By |
 |---|---|---|
 | 11-07-2026 | Initial manual + this metadoc authored (H531); pipeline re-run and all numbers verified live | Fable 5 (`claude-fable-5`) |
+| 11-07-2026 | template v2 backfill (H663) | Sonnet 5 (`claude-sonnet-5`) |
 
 _Dr. Mārcis Gasūns_
