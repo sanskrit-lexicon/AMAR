@@ -20,7 +20,7 @@ The *Amarakośa* is the most widely cited classical Sanskrit thesaurus, organise
 | [transcoder.py](https://github.com/sanskrit-lexicon/AMAR/blob/main/transcoder.py) + [transcoder/](https://github.com/sanskrit-lexicon/AMAR/tree/main/transcoder) | SLP1 / Devanagari / IAST transcoding engine and tables |
 | [redo.sh](https://github.com/sanskrit-lexicon/AMAR/blob/main/redo.sh) | Pipeline orchestrator |
 | [index.html](https://github.com/sanskrit-lexicon/AMAR/blob/main/index.html) | GitHub Pages landing page |
-| [changelog.md](https://github.com/sanskrit-lexicon/AMAR/blob/main/changelog.md) | Dated maintenance snapshots |
+| [CHANGELOG.md](https://github.com/sanskrit-lexicon/AMAR/blob/main/CHANGELOG.md) | Dated maintenance snapshots |
 | [CITATION.cff](https://github.com/sanskrit-lexicon/AMAR/blob/main/CITATION.cff) | CFF 1.2.0 academic citation metadata |
 | [LICENSE](https://github.com/sanskrit-lexicon/AMAR/blob/main/LICENSE) | CC-BY-SA-4.0 |
 
@@ -30,7 +30,7 @@ The *Amarakośa* is the most widely cited classical Sanskrit thesaurus, organise
 |---|---|
 | 30 Jan 2024 | Initial conversion: `amar1.txt` (Devanagari OCR) → `amar.txt` (CDSL format); gender frequency list generated |
 | May 2026 | [CLAUDE.md](https://github.com/sanskrit-lexicon/AMAR/blob/main/CLAUDE.md) added; README and full issue triage (labels, milestones, projects); CITATION.cff enriched with publication metadata |
-| Jun 2026 | [changelog.md](https://github.com/sanskrit-lexicon/AMAR/blob/main/changelog.md) started |
+| Jun 2026 | [CHANGELOG.md](https://github.com/sanskrit-lexicon/AMAR/blob/main/CHANGELOG.md) started |
 | Jul 2026 | GitHub Pages landing page ([index.html](https://github.com/sanskrit-lexicon/AMAR/blob/main/index.html)) added |
 
 ## Projects & Milestones
