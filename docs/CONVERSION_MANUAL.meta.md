@@ -119,7 +119,7 @@ is currently scheduled or anticipated.
 - [README.md](https://github.com/sanskrit-lexicon/AMAR/blob/main/README.md) — repo overview, timeline, issue taxonomy
 - [CLAUDE.md](https://github.com/sanskrit-lexicon/AMAR/blob/main/CLAUDE.md) — code contract: data-format tag table, downstream integration, issue conventions
 - [csl-orig correction workflow](https://github.com/sanskrit-lexicon/csl-corrections/blob/main/docs/correction-workflow.md) — canonical post-publish correction procedure
-- [changelog.md](https://github.com/sanskrit-lexicon/AMAR/blob/main/changelog.md) — dated maintenance snapshots
+- [CHANGELOG.md](https://github.com/sanskrit-lexicon/AMAR/blob/main/CHANGELOG.md) — dated maintenance snapshots
 
 ## Revision history
 
