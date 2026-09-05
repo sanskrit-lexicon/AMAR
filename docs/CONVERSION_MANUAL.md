@@ -55,7 +55,7 @@ Expected checkpoints (measured 11-07-2026):
 | Reproducibility (`temp_amar.txt` vs committed `amar.txt`) | 0 diff lines |
 
 Diagnostics on the run — jump to
-[Symptom → cause → cure](#symptom--cause--cure).
+[Symptom → cause → cure](#symptom-cause-cure).
 
 ## Data flow
 
@@ -74,7 +74,7 @@ flowchart TD
 Sibling-repo dependencies enter only at the publish step:
 [csl-orig](https://github.com/sanskrit-lexicon/csl-orig) receives the converted
 text, and the CDSL build/display layers are wired per the
-[downstream integration checklist](#stage-4--publish-and-wire-downstream).
+[downstream integration checklist](#stage-4-publish-and-wire-downstream).
 Everything upstream of that runs entirely inside this repo with the Python
 standard library.
 
@@ -82,7 +82,7 @@ standard library.
 
 - **Python 3** — standard library only; no pip installs. (`codecs.open()`
   DeprecationWarnings on modern Pythons are cosmetic — see
-  [symptom table](#symptom--cause--cure).)
+  [symptom table](#symptom-cause-cure).)
 - **A POSIX shell** with `diff` (Git Bash suffices on Windows) for
   [redo.sh](https://github.com/sanskrit-lexicon/AMAR/blob/main/redo.sh).
 - **This repo's own data** — the OCR source
@@ -121,7 +121,7 @@ differ. Use `--strip-trailing-cr` on Windows, or check out with `eol=lf`.
 *Nāmaliṅgānuśāsana*, imported once in January 2024 from
 [drdhaval2785/sanskrit-lexica-ocr](https://github.com/drdhaval2785/sanskrit-lexica-ocr/blob/master/namalinganushasana_amarasinha/orig/namalinganushasana.txt)
 (University of Hyderabad SCL digitisation; format documented in the
-[sanskrit-kosha annotation notes](https://github.com/sanskrit-kosha/kosha/blob/master/docs/annotation_thoughts.md)).
+sanskrit-kosha annotation notes).
 It is **not regenerated** by this pipeline — treat it as read-only input. The
 file has two halves split by the `;CONTENT` marker at line 50: a `;METADATA`
 block of `;key{value}` lines, then the text body with structure markers
@@ -239,7 +239,7 @@ a shifted distribution is a cheap smoke test that synonym markup wasn't
 corrupted. Note the script echoes every synonym to stdout while running —
 redirect if you want a quiet run. A gender code appearing in the data but
 missing from the script's name table crashes the run — that is a **useful**
-canary, see the [symptom table](#symptom--cause--cure).
+canary, see the [symptom table](#symptom-cause-cure).
 
 ## Re-running and extending
 
