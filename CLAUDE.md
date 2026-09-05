@@ -1,3 +1,5 @@
+_Created: 15-05-2026 · Last updated: 05-09-2026_
+
 # CLAUDE.md
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
@@ -127,3 +129,5 @@ Issues follow the Sanskrit Lexicon taxonomy (see org-level CLAUDE.md):
 | 2 | Digitization Quality | `scan-quality`, `encoding`, `bug`, `text-correction` |
 | 3 | Structured Data | `markup`, `question` |
 | 4 | Major Enhancements | `content-enhancement` |
+
+_Dr. Mārcis Gasūns_

@@ -1,3 +1,5 @@
+_Created: 12-07-2026 · Last updated: 05-09-2026_
+
 ## Summary
 - What changed:
 - Why:
@@ -8,3 +10,5 @@
 
 ## Notes
 - Known limits or follow-up:
+
+_Dr. Mārcis Gasūns_

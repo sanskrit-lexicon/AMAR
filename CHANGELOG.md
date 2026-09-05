@@ -1,3 +1,5 @@
+_Created: 13-06-2026 · Last updated: 05-09-2026_
+
 # Changelog
 
 All notable changes to AMAR are documented here.
@@ -18,3 +20,5 @@ ready for a dated entry.
 - 2026-05-15 Add CLAUDE.md with codebase guidance for Claude Code
 - 2024-01-30 gender info listed
 - 2024-01-30 readme update
+
+_Dr. Mārcis Gasūns_
