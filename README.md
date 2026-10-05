@@ -1,5 +1,7 @@
 # AMAR — Amarakośa in CDSL Format
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23151274.svg)](https://doi.org/10.5281/zenodo.23151274)
+
 _Created: 30-01-2024 · Last updated: 11-07-2026_
 
 The **AMAR** repository converts the *Amarakośa* (*Nāmaliṅgānuśāsana*) of Amarasiṃha from its OCR Devanagari source into the Cologne Digital Sanskrit Lexicon (CDSL) plain-text format. The result, [amar.txt](https://github.com/sanskrit-lexicon/AMAR/blob/main/amar.txt), feeds into the CDSL build pipeline and the [csl-orig](https://github.com/sanskrit-lexicon/csl-orig) repository.
