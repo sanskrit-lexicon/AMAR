@@ -21,7 +21,6 @@ Pure standard library; deterministic (fixed seed). Usage:
 import argparse
 import gzip
 import json
-import math
 import random
 import re
 import sys
@@ -30,10 +29,10 @@ from collections import Counter, defaultdict, deque
 SEED = 20261004  # H6057
 ASPL_SAMPLES = 200  # BFS sources for average-shortest-path estimate
 
-# Gender suffixes of the AMAR annotation (gender_list.txt inventory, 16 tags).
+# Gender suffixes of the AMAR annotation (the 15 tags in gender_list.txt).
 GENDER_TAGS = [
     "ajYAta", "puMstrI", "puMklI", "strIklI", "strIba", "strIdvi",
-    "puMba", "puMdvi", "puMdvaya", "klIdvi", "klIa", "puM", "strI",
+    "puMba", "puMdvi", "klIdvi", "klIa", "puM", "strI",
     "klI", "tri", "a",
 ]
 GENDER_TAGS.sort(key=len, reverse=True)  # longest-match first
@@ -90,10 +89,11 @@ def build_graph(synsets):
 
 
 def components(adj):
-    """List of components (as lists) sorted by size desc."""
+    """List of components (as lists) sorted by size desc.
+    Iterates sorted(adj) so output order is process-deterministic."""
     seen = set()
     comps = []
-    for start in adj:
+    for start in sorted(adj):
         if start in seen:
             continue
         comp, q = [], deque([start])
@@ -105,8 +105,8 @@ def components(adj):
                 if nb not in seen:
                     seen.add(nb)
                     q.append(nb)
-        comps.append(comp)
-    comps.sort(key=len, reverse=True)
+        comps.append(sorted(comp))
+    comps.sort(key=lambda c: (-len(c), c[0]))
     return comps
 
 
@@ -125,14 +125,15 @@ def bfs_dist(adj, src):
 
 def ifub_diameter(adj, nodes, cap=4000):
     """Exact diameter via iFUB (Crescenzi et al. 2010) on subgraph `nodes`.
-    Falls back to a certified lower bound if > cap nodes need scanning."""
+    Falls back to a certified lower bound if > cap nodes need scanning.
+    All iterations are over sorted sequences: process-deterministic."""
     sub = {n: adj[n] & set(nodes) for n in nodes}
-    start = max(nodes, key=lambda n: len(sub[n]))
+    start = max(sorted(nodes), key=lambda n: (len(sub[n]), n))
     dist0 = bfs_dist(sub, start)
     ecc0 = max(dist0.values())
     levels = defaultdict(list)
-    for n, d in dist0.items():
-        levels[d].append(n)
+    for n in sorted(dist0):
+        levels[dist0[n]].append(n)
     lb, scanned = ecc0, 0
     i = ecc0
     while 2 * i > lb:
@@ -176,7 +177,9 @@ def gini(values):
 
 
 def rewire_null(adj, n_swaps_mult=4):
-    """Degree-preserving double-edge-swap null model (simple graph)."""
+    """Degree-preserving double-edge-swap null model (simple graph).
+    The edge list is built from sorted iteration, so with the fixed seed the
+    whole null model is process-deterministic (no hash-order dependence)."""
     rng = random.Random(SEED)
     edges = [tuple(e) for e in adj_to_edges(adj)]
     eset = set(frozenset(e) for e in edges)
@@ -207,13 +210,15 @@ def rewire_null(adj, n_swaps_mult=4):
 
 
 def adj_to_edges(adj):
+    """Yield canonical (min,max) tuples in sorted order — the orientation and
+    order of this list must not depend on per-process hash randomization."""
     seen = set()
-    for u in adj:
-        for v in adj[u]:
+    for u in sorted(adj):
+        for v in sorted(adj[u]):
             e = frozenset((u, v))
             if e not in seen:
                 seen.add(e)
-                yield tuple(e)
+                yield tuple(sorted(e))
 
 
 def load_mw_keys(mw_path):
@@ -374,11 +379,13 @@ def main():
             fh.write(f"{n}\t{degrees[n]}\t{len(node_synsets[n])}\t"
                      f"{'|'.join(sorted(node_genders[n]))}\t{mw_flag}\n")
 
-    with gzip.open(f"{args.outdir}/amar_syngraph_edges.tsv.gz", "wt", encoding="utf-8") as fh:
-        fh.write("u\tv\tweight\n")
-        for e, w in sorted(edge_weight.items(), key=lambda kv: -kv[1]):
-            u, v = sorted(e)
-            fh.write(f"{u}\t{v}\t{w}\n")
+    edge_text = "u\tv\tweight\n"
+    for e, w in sorted(edge_weight.items(), key=lambda kv: (-kv[1], sorted(kv[0]))):
+        u, v = sorted(e)
+        edge_text += f"{u}\t{v}\t{w}\n"
+    # mtime=0: byte-stable archive across runs (no timestamp in the header)
+    with open(f"{args.outdir}/amar_syngraph_edges.tsv.gz", "wb") as fh:
+        fh.write(gzip.compress(edge_text.encode("utf-8"), 9, mtime=0))
 
     print(json.dumps({k: metrics[k] for k in
                       ("nodes", "edges_unique", "components", "diameter_largest",

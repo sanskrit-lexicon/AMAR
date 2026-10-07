@@ -2,15 +2,17 @@ _Created: 07-10-2026 · Last updated: 07-10-2026_
 
 # Amarakośa as a Synonymy Graph (H6057)
 
-The Amarakośa is the only CDSL dictionary that is a **thesaurus**: its entries
-are synonym sets (synsets), not alphabetical headwords. This analysis makes
-that structure explicit as a graph and measures it — components, hubs,
-diameter, clustering — then cross-checks its vocabulary coverage against the
-Monier-Williams (MW) sense network and quantifies its "thesaurusness" against
-what an alphabetical dictionary can express structurally.
+The Amarakośa is a **thesaurus** where every other CDSL dictionary of this
+repo's pipeline is alphabetical: its entries are synonym sets (synsets), not
+headword articles. This analysis makes that structure explicit as a graph and
+measures it — components, hubs, diameter, clustering — then cross-checks its
+vocabulary coverage against the Monier-Williams (MW) sense network and
+quantifies its "thesaurusness" against what an alphabetical dictionary can
+express structurally.
 
 All numbers below are produced by `scripts/amar_graph.py` (pure Python stdlib,
-deterministic, seed `20261004`); raw outputs are committed under `analysis/`.
+deterministic across processes, seed `20261004`; verified by two-process
+byte-identical rerun); raw outputs are committed under `analysis/`.
 
 ## Reproduce
 
@@ -28,7 +30,7 @@ never written by this repo). Without `--mw`, coverage blocks are skipped.
 
 - **Synsets** — every `<eid>N<syns><s>…</s>` line of `amar.txt` (5,590 synsets
   across 2,359 `<L>` entries; the *nānārtha* section packs several synonym rows
-  per entry). Each token is split `lemma-genderTag` (16 gender tags from
+  per entry). Each token is split `lemma-genderTag` (the 15 gender tags of
   `gender_list.txt`, longest-match).
 - **Nodes** — 9,027 distinct lemmas (gender stripped; gender tags are kept as
   node attributes in `analysis/amar_syngraph_nodes.tsv`).
@@ -59,7 +61,7 @@ never written by this repo). Without `--mw`, coverage blocks are skipped.
 | **Diameter (largest comp., exact iFUB)** | **23** |
 | Avg. shortest path (200-sample) | 7.67 |
 | Global transitivity | 0.880 |
-| Transitivity, rewired null | 0.0062 |
+| Transitivity, rewired null | 0.0060 |
 | Triangles | 157,578 |
 
 ## Components
@@ -86,6 +88,10 @@ is one connected continent with many islands.
 | Siva | 63 | 3 |
 | arka | 62 | 12 |
 | Baga | 61 | 9 |
+| aRqaja | 61 | 5 |
+| aruRa | 61 | 6 |
+| ISvara | 60 | 2 |
+| BIma | 59 | 2 |
 
 Two hub types: **clique centres** with huge synsets (Aditya sits in synsets
 of 26 and 55 members — the great sun-synonym list — giving degree 79 from
@@ -129,15 +135,16 @@ scores on three axes an alphabetical dictionary scores 0 or n/a on:
 |---|---|---|
 | Bridge-lemma share (≥2 synsets) | **0.243** | 0 (by construction) |
 | Mean synset size (synonym redundancy) | **2.51** | n/a — no synsets |
-| Transitivity vs degree-preserving null | **0.880 vs 0.0062 (142×)** | no graph to rewire |
+| Transitivity vs degree-preserving null | **0.880 vs 0.0060 (146×)** | no graph to rewire |
 
-The 142× transitivity lift over the rewired null is the structural signature
+The 146× transitivity lift over the rewired null is the structural signature
 of onomasiological organisation: co-listed synonyms form dense, closed
 communities that a random graph with the identical degree sequence cannot
 reproduce. This ratio — not any raw count — is the transferable
-"thesaurusness" coefficient: it can be computed for any CDSL dictionary with
-synonym-set markup (e.g. any future *kośa* ingest) and will read ≈1 for
-alphabetical material rewired against itself.
+"thesaurusness" coefficient: it can be computed for any dictionary with
+synonym-set markup (e.g. any future *kośa* ingest). For alphabetical material
+without synonym markup there is no co-listing graph to lift in the first
+place — which is the point.
 
 ## Files
 

@@ -211,7 +211,7 @@
     "bridge_lemmas": 2190,
     "mean_synset_size": 2.510912343470483,
     "transitivity": 0.8797342563644485,
-    "transitivity_null_rewired": 0.006180214381420277,
-    "transitivity_lift_vs_null": 142.3468834688347
+    "transitivity_null_rewired": 0.00601831174631532,
+    "transitivity_lift_vs_null": 146.17625231910947
   }
 }
