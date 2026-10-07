@@ -1,0 +1,217 @@
+{
+  "handoff": "H6057",
+  "seed": 20261004,
+  "source": "amar.txt",
+  "entries_total": 5590,
+  "synsets": 5590,
+  "synsets_singleton": 1059,
+  "synset_size": {
+    "mean": 2.510912343470483,
+    "median": 2,
+    "max": 55
+  },
+  "nodes": 9027,
+  "edges_unique": 28391,
+  "edge_multiplicity_total": 28741,
+  "components": {
+    "count": 1415,
+    "sizes_top10": [
+      4955,
+      34,
+      25,
+      20,
+      19,
+      16,
+      15,
+      13,
+      12,
+      12
+    ],
+    "largest_share": 0.5489088290683505
+  },
+  "degree": {
+    "max": 86,
+    "mean": 6.290240389941287,
+    "gini": 0.5954455482639625,
+    "top25": [
+      [
+        "citraBAnu",
+        86,
+        4
+      ],
+      [
+        "viBAvasu",
+        86,
+        4
+      ],
+      [
+        "Aditya",
+        79,
+        3
+      ],
+      [
+        "puzkara",
+        69,
+        12
+      ],
+      [
+        "sarvajYa",
+        68,
+        2
+      ],
+      [
+        "viDu",
+        66,
+        4
+      ],
+      [
+        "go",
+        65,
+        17
+      ],
+      [
+        "BAnu",
+        64,
+        4
+      ],
+      [
+        "Siva",
+        63,
+        3
+      ],
+      [
+        "arka",
+        62,
+        12
+      ],
+      [
+        "Baga",
+        61,
+        9
+      ],
+      [
+        "aRqaja",
+        61,
+        5
+      ],
+      [
+        "aruRa",
+        61,
+        6
+      ],
+      [
+        "ISvara",
+        60,
+        2
+      ],
+      [
+        "BIma",
+        59,
+        2
+      ],
+      [
+        "anantA",
+        59,
+        5
+      ],
+      [
+        "haMsa",
+        58,
+        4
+      ],
+      [
+        "kfzRa",
+        58,
+        5
+      ],
+      [
+        "taraRi",
+        58,
+        3
+      ],
+      [
+        "hari",
+        57,
+        16
+      ],
+      [
+        "sUrya",
+        57,
+        9
+      ],
+      [
+        "mitra",
+        56,
+        4
+      ],
+      [
+        "virocana",
+        56,
+        4
+      ],
+      [
+        "Kadyota",
+        55,
+        2
+      ],
+      [
+        "braDna",
+        55,
+        2
+      ]
+    ]
+  },
+  "transitivity": 0.8797342563644485,
+  "triangles": 157578,
+  "connected_triples": 537360,
+  "diameter_largest": 23,
+  "diameter_exact": true,
+  "aspl_largest_sampled": 7.6713,
+  "aspl_samples": 200,
+  "mw_coverage": {
+    "mw_headwords": 194083,
+    "covered_exact": 8272,
+    "covered_after_accent_strip": 0,
+    "uncovered": 755,
+    "uncovered_in_mw_body": 136,
+    "uncovered_absent_from_mw": 619,
+    "uncovered_absent_sample": [
+      "CAyAnATa",
+      "tamisrahan",
+      "tejasAMrASi",
+      "mftyuYjaya",
+      "vasunDarA",
+      "biqOjas",
+      "purandara",
+      "saNkrandana",
+      "DanaYjaya",
+      "BogaDara",
+      "BujaNga",
+      "BujaNgama",
+      "saNKya",
+      "saNgrAma",
+      "rajomUrtin",
+      "naBasaNgama",
+      "patraraTa",
+      "pitsant",
+      "vihaNga",
+      "vihaNgama",
+      "saNGAta",
+      "saNKyAvat",
+      "sandoha",
+      "suvahA",
+      "fzyaproktA"
+    ],
+    "share_exact": 0.9163620250360031,
+    "share_normalized": 0.9163620250360031,
+    "share_headword_or_body": 0.9314279384070012
+  },
+  "thesaurusness": {
+    "bridge_lemma_share": 0.2426055167829844,
+    "bridge_lemmas": 2190,
+    "mean_synset_size": 2.510912343470483,
+    "transitivity": 0.8797342563644485,
+    "transitivity_null_rewired": 0.00601831174631532,
+    "transitivity_lift_vs_null": 146.17625231910947
+  }
+}
