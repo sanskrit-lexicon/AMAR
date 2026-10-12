@@ -8,6 +8,15 @@ This repository does not currently publish versioned release notes. Entries use
 dated maintenance snapshots; keep upcoming work under [Unreleased] until it is
 ready for a dated entry.
 
+## [Unreleased]
+
+### Added
+- Added `scripts/amar_graph.py` + committed outputs (`analysis/amar_syngraph_metrics.json`,
+  `amar_syngraph_nodes.tsv`, `amar_syngraph_edges.tsv.gz`): the Amarakośa as a synonymy
+  graph (H6057) — 9,027 lemma nodes, 28,391 edges, giant component 55%, exact diameter 23
+  (iFUB), MW headword coverage 91.6%, transitivity 0.880 vs 0.0060 degree-preserving null
+  (146× thesaurusness lift). Report: `docs/AMAR_SYNONYM_GRAPH.md`.
+
 ## [1.0.0] - 2026-06-13
 
 ### Added
